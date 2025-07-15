@@ -1,0 +1,197 @@
+/* Base styles */
+body {
+    overflow-x: hidden;
+}
+
+/* Particle background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* 3D Cube Animation */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 20s infinite linear;
+}
+
+.cube .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.cube .front {
+    transform: translateZ(100px);
+}
+
+.cube .back {
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.cube .right {
+    transform: rotateY(-270deg) translateX(100px);
+    transform-origin: top right;
+}
+
+.cube .left {
+    transform: rotateY(270deg) translateX(-100px);
+    transform-origin: center left;
+}
+
+.cube .top {
+    transform: rotateX(-270deg) translateY(-100px);
+    transform-origin: top center;
+}
+
+.cube .bottom {
+    transform: rotateX(270deg) translateY(100px);
+    transform-origin: bottom center;
+}
+
+@keyframes rotateCube {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Floating elements */
+.animate-float1 {
+    animation: float1 6s ease-in-out infinite;
+}
+
+.animate-float2 {
+    animation: float2 8s ease-in-out infinite;
+}
+
+.animate-float3 {
+    animation: float3 7s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(15px) translateX(-15px); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(-10px); }
+}
+
+/* Feature cards hover effect */
+.feature-card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+/* DEX buttons */
+.dex-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.dex-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Social icons */
+.social-icon {
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Orbiting animations */
+.animate-orbit1 {
+    animation: orbit1 20s linear infinite;
+}
+
+.animate-orbit2 {
+    animation: orbit2 25s linear infinite;
+}
+
+.animate-orbit3 {
+    animation: orbit3 30s linear infinite;
+}
+
+.animate-orbit4 {
+    animation: orbit4 35s linear infinite;
+}
+
+@keyframes orbit1 {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes orbit3 {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes orbit4 {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cube {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cube .front {
+        transform: translateZ(75px);
+    }
+    
+    .cube .back {
+        transform: translateZ(-75px) rotateY(180deg);
+    }
+    
+    .cube .right {
+        transform: rotateY(-270deg) translateX(75px);
+    }
+    
+    .cube .left {
+        transform: rotateY(270deg) translateX(-75px);
+    }
+    
+    .cube .top {
+        transform: rotateX(-270deg) translateY(-75px);
+    }
+    
+    .cube .bottom {
+        transform: rotateX(270deg) translateY(75px);
+    }
+}
