@@ -121,5 +121,10 @@ Thumbs.db
 # Uploads directory (if you want to exclude user uploads)
 # uploads/
 
+# Exclude HTML files to prevent conflicts with EJS routing
+*.html
+index*.html
+app.html
+
 # Vercel
 .vercel
