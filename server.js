@@ -486,11 +486,13 @@ app.use((req, res) => {
     res.status(404).render('404');
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`🚀 BaseBridge server is running on http://localhost:${PORT}`);
-    console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-    console.log(`🔗 API endpoints available at http://localhost:${PORT}/api`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 BaseBridge server is running on http://localhost:${PORT}`);
+        console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
+        console.log(`🔗 API endpoints available at http://localhost:${PORT}/api`);
+    });
+}
 
 module.exports = app;
