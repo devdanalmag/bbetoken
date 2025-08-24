@@ -639,21 +639,25 @@
     line-height: 1.6;
 }
 
-/* Settings Tab */
+/* Settings Tab - Blue Theme */
 .settings-section {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #ecf0f1;
+    background: #f8f9ff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 .settings-section:last-child {
-    border-bottom: none;
     margin-bottom: 0;
 }
 
 .settings-section h3 {
+    color: #2563eb;
+    font-weight: 600;
     margin: 0 0 1.5rem 0;
-    color: #2c3e50;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #2563eb;
     font-size: 1.25rem;
 }
 
@@ -663,6 +667,69 @@
 
 .settings-form .form-group {
     margin-bottom: 1.5rem;
+}
+
+.settings-form .form-group label {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.settings-form .form-group input,
+.settings-form .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.settings-form .form-group input:focus,
+.settings-form .form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: #f0f4ff;
+}
+
+.settings-form .form-group input:hover,
+.settings-form .form-group select:hover {
+    border-color: #2563eb;
+}
+
+.settings-form .form-group select {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%232563eb" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+}
+
+.settings-form .btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border: none;
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.settings-form .btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.settings-form .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .checkbox-group {
@@ -680,18 +747,19 @@
 }
 
 .checkbox-label:hover {
-    background: #f8f9fa;
+    background: #f0f4ff;
 }
 
 .checkbox-custom {
     width: 20px;
     height: 20px;
-    border: 2px solid #bdc3c7;
+    border: 2px solid #2563eb;
     border-radius: 4px;
     position: relative;
     flex-shrink: 0;
     margin-top: 2px;
     transition: all 0.3s ease;
+    display: block;
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -699,8 +767,8 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
-    background: #667eea;
-    border-color: #667eea;
+    background: #2563eb;
+    border-color: #2563eb;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
@@ -1117,6 +1185,25 @@
     }
 }
 
+/* Responsive Settings Styles */
+@media (max-width: 768px) {
+    .settings-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .settings-form .form-group input,
+    .settings-form .form-group select {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.9rem;
+    }
+    
+    .settings-form .btn-primary {
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+    }
+}
+
 @media (max-width: 480px) {
     .profile-card {
         padding: 1rem;
@@ -1140,5 +1227,13 @@
     .overview-section {
         margin-bottom: 1.5rem;
         padding-bottom: 1.5rem;
+    }
+    
+    .settings-section {
+        padding: 1rem;
+    }
+    
+    .settings-form .form-group {
+        margin-bottom: 1rem;
     }
 }
