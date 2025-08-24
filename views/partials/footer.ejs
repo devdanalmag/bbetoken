@@ -1,0 +1,11 @@
+<!-- Additional JavaScript -->
+    <% if (typeof additionalJS !== 'undefined' && additionalJS) { %>
+        <% additionalJS.forEach(function(js) { %>
+            <script src="/js/<%= js %>"></script>
+        <% }); %>
+    <% } %>
+    
+    <!-- Main JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

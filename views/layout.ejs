@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/styles/main.css">
+    
+    <!-- Additional CSS -->
+    <% if (typeof additionalCSS !== 'undefined' && additionalCSS) { %>
+        <% additionalCSS.forEach(function(css) { %>
+            <link rel="stylesheet" href="/styles/<%= css %>">
+        <% }); %>
+    <% } %>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="/img/logo.jpg" alt="BaseBridge Logo" class="nav-logo">
+                <span class="nav-title">BaseBridge</span>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/jobs" class="nav-link">Find Jobs</a>
+                <a href="/post-job" class="nav-link">Post Job</a>
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/profile" class="nav-link">Profile</a>
+                <a href="/auth" class="nav-link btn btn-primary">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <%- body %>
+    
+    <!-- Additional JavaScript -->
+    <% if (typeof additionalJS !== 'undefined' && additionalJS) { %>
+        <% additionalJS.forEach(function(js) { %>
+            <script src="/js/<%= js %>"></script>
+        <% }); %>
+    <% } %>
+</body>
+</html>
